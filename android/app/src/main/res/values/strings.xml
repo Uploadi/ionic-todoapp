@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ToDo - Ionic</string>
+    <string name="title_activity_main">ToDo - Ionic</string>
+    <string name="package_name">de.linusboddien.msatodo</string>
+    <string name="custom_url_scheme">de.linusboddien.msatodo</string>
+</resources>

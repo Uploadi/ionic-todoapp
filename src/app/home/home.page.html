@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Todo-App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div style="position: sticky; top: 0; z-index: 100">
+    <ion-item>
+      <ion-label>New Todo</ion-label>
+      <ion-input type="text" [(ngModel)]="newTodo"></ion-input>
+      <ion-button (click)="addTodo()" style="height: 100%; padding: 0.4rem 0 0.4rem 0.4rem;">
+        <ion-icon name="checkmark" style="padding-right: 0.4rem; padding-left: 0.4rem"></ion-icon>
+        Save
+      </ion-button>
+    </ion-item>
+  </div>
+  <div *ngFor="let todo of todos">
+    <ion-item lines="none" *ngIf="!todo.complete">
+      <ion-checkbox [(ngModel)]="todo.complete" (click)="updateTodo(todo)"></ion-checkbox>
+      <ion-label class="todoLabel">{{todo.task}}</ion-label>
+    </ion-item>
+  </div>
+  <ion-item-divider *ngIf="hasCompleted()">Erledigte Todos</ion-item-divider>
+  <div *ngFor="let todo of todos">
+    <ion-item lines="none" *ngIf="todo.complete">
+      <ion-checkbox checked="true" (click)="deleteTodo(todo)" color="medium"></ion-checkbox>
+      <ion-label style="margin-left: 1em">{{todo.task}}</ion-label>
+    </ion-item>
+  </div>
+</ion-content>

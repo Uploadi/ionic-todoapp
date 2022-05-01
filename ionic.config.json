@@ -1,0 +1,7 @@
+{
+  "name": "ToDo - Ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
